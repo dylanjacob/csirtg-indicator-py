@@ -289,6 +289,7 @@ def main():
     p.add_argument('--indicator', help="specify indicator")
     p.add_argument('--tlp', help='specify tlp', default='green')
     p.add_argument('--tags', help='specify tags')
+    p.add_argument('--provider', help='specify provider')
 
     args = p.parse_args()
 
@@ -302,7 +303,7 @@ def main():
     console.setFormatter(logging.Formatter(LOG_FORMAT))
     logging.getLogger('').addHandler(console)
 
-    i = Indicator(indicator=args.indicator, tlp=args.tlp, tags=args.tags)
+    i = Indicator(indicator=args.indicator, tlp=args.tlp, tags=args.tags, provider=args.provider)
 
     print(i)
 
